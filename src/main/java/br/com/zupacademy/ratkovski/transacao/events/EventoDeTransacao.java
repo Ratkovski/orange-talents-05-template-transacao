@@ -1,8 +1,8 @@
 package br.com.zupacademy.ratkovski.transacao.events;
 
 import br.com.zupacademy.ratkovski.transacao.modelo.Transacao;
-import br.com.zupacademy.ratkovski.transacao.response.CartaoResponse;
-import br.com.zupacademy.ratkovski.transacao.response.EstabelecimentoResponse;
+import br.com.zupacademy.ratkovski.transacao.request.CartaoRequest;
+import br.com.zupacademy.ratkovski.transacao.request.EstabelecimentoResquest;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 public class EventoDeTransacao {
     private String id;
     private BigDecimal valor;
-    private EstabelecimentoResponse estabelecimento;
-    private CartaoResponse cartao;
+    private EstabelecimentoResquest estabelecimento;
+    private CartaoRequest cartao;
     private LocalDateTime efetivadaEm;
 
     @Deprecated
@@ -21,8 +21,8 @@ public class EventoDeTransacao {
 
     public EventoDeTransacao(String id,
                              BigDecimal valor,
-                             EstabelecimentoResponse estabelecimento,
-                             CartaoResponse cartao,
+                             EstabelecimentoResquest estabelecimento,
+                             CartaoRequest cartao,
                              LocalDateTime efetivadaEm) {
         this.id = id;
         this.valor = valor;
@@ -59,11 +59,11 @@ public class EventoDeTransacao {
         return valor;
     }
 
-    public EstabelecimentoResponse getEstabelecimento() {
+    public EstabelecimentoResquest getEstabelecimento() {
         return estabelecimento;
     }
 
-    public CartaoResponse getCartao() {
+    public CartaoRequest getCartao() {
         return cartao;
     }
 
